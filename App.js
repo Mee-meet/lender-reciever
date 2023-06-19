@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { Text, View, Button } from "react-native";
 
 const App = () => {
-  const [count, setcount] = useState(1);
-
-  useEffect(() => {
-    console.warn("test use effect", count);
-  });
+  const [data, setdata] = useState(undefined);
+  // const [result, setresult] = useState(undefined);
+  const getapidata = async () => {
+    //api call
+    let url = "https://jsonplaceholder.typicode.com/posts/1";
+    let result = await fetch(url);
+    result = await result.json();
+    setdata(result);
+  };
+  // useEffect(() => {
+  //   getapidata();
+  // });
   return (
-    <View style={styles.container}>
-      <Text style={styles.centeredText}>{count}</Text>
-      <Button title="update state" onPress={() => setcount(count + 1)} />
+    <View>
+      <Button title="api call" onPress={() => getapidata()} />
+      {data ? (
+        <View>
+          <Text>{data.id}</Text>
+          <Text>{data.userId}</Text>
+          <Text>{data.title}</Text>
+          <Text>{data.body}</Text>
+        </View>
+      ) : null}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  centeredText: {
-    textAlign: "center",
-    textAlignVertical: "center",
-  },
-});
-
 export default App;
