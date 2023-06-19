@@ -8,7 +8,7 @@ export default function App() {
   const [amount, setAmount] = useState("");
 
   const FormSubmit = () => {
-    //???????
+    //?????????
   };
 
   return (
