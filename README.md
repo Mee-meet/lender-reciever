@@ -1,6 +1,5 @@
 # lender-reciever
-.
-Assignment
+
 Frontend - 
 1. React Native
 2. 4 fields to take input from user
@@ -23,9 +22,8 @@ Backend -
 2. Read the content of the body
 3. Save the content in the mysql database table
 4. Backend will connect with DB (R/D topic - try to figure out a way how a golang backend connect with mysql)
-
-
-Database - 
+ 
+Daatabase-
 1. mysql database
 2. Table Transaction Content
    2.1 Primary Key
@@ -33,3 +31,8 @@ Database -
    2.3 ReceiverName
    2.4 Amount
    2.5 Date
+
+
+https://github.com/Mee-meet/lender-reciever/assets/129668592/bc1ffafb-5619-4629-86f7-e775138728b6
+
+
